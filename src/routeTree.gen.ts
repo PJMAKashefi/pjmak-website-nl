@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ApproachRouteImport } from './routes/approach'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PlatformRouteImport } from './routes/platform'
+import { Route as TiersRouteImport } from './routes/tiers'
+import { Route as DemoIndexRouteImport } from './routes/demo.index'
+import { Route as DemoSectorRouteImport } from './routes/demo.$sector'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApproachRoute = ApproachRouteImport.update({
+  id: '/approach',
+  path: '/approach',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlatformRoute = PlatformRouteImport.update({
+  id: '/platform',
+  path: '/platform',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TiersRoute = TiersRouteImport.update({
+  id: '/tiers',
+  path: '/tiers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DemoIndexRoute = DemoIndexRouteImport.update({
+  id: '/demo/',
+  path: '/demo/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DemoSectorRoute = DemoSectorRouteImport.update({
+  id: '/demo/$sector',
+  path: '/demo/$sector',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/approach': typeof ApproachRoute
+  '/contact': typeof ContactRoute
+  '/platform': typeof PlatformRoute
+  '/tiers': typeof TiersRoute
+  '/demo/$sector': typeof DemoSectorRoute
+  '/demo/': typeof DemoIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/approach': typeof ApproachRoute
+  '/contact': typeof ContactRoute
+  '/platform': typeof PlatformRoute
+  '/tiers': typeof TiersRoute
+  '/demo/$sector': typeof DemoSectorRoute
+  '/demo': typeof DemoIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/approach': typeof ApproachRoute
+  '/contact': typeof ContactRoute
+  '/platform': typeof PlatformRoute
+  '/tiers': typeof TiersRoute
+  '/demo/$sector': typeof DemoSectorRoute
+  '/demo/': typeof DemoIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/approach'
+    | '/contact'
+    | '/platform'
+    | '/tiers'
+    | '/demo/$sector'
+    | '/demo/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/approach'
+    | '/contact'
+    | '/platform'
+    | '/tiers'
+    | '/demo/$sector'
+    | '/demo'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/approach'
+    | '/contact'
+    | '/platform'
+    | '/tiers'
+    | '/demo/$sector'
+    | '/demo/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ApproachRoute: typeof ApproachRoute
+  ContactRoute: typeof ContactRoute
+  PlatformRoute: typeof PlatformRoute
+  TiersRoute: typeof TiersRoute
+  DemoSectorRoute: typeof DemoSectorRoute
+  DemoIndexRoute: typeof DemoIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +143,68 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/approach': {
+      id: '/approach'
+      path: '/approach'
+      fullPath: '/approach'
+      preLoaderRoute: typeof ApproachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/platform': {
+      id: '/platform'
+      path: '/platform'
+      fullPath: '/platform'
+      preLoaderRoute: typeof PlatformRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tiers': {
+      id: '/tiers'
+      path: '/tiers'
+      fullPath: '/tiers'
+      preLoaderRoute: typeof TiersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demo/': {
+      id: '/demo/'
+      path: '/demo'
+      fullPath: '/demo/'
+      preLoaderRoute: typeof DemoIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demo/$sector': {
+      id: '/demo/$sector'
+      path: '/demo/$sector'
+      fullPath: '/demo/$sector'
+      preLoaderRoute: typeof DemoSectorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ApproachRoute: ApproachRoute,
+  ContactRoute: ContactRoute,
+  PlatformRoute: PlatformRoute,
+  TiersRoute: TiersRoute,
+  DemoSectorRoute: DemoSectorRoute,
+  DemoIndexRoute: DemoIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
