@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/pjmak-logo.jpg.asset.json";
+import logo from "../../assets/pjmak-logo.jpg.asset.json";
 import { useLang, pick } from "@/lib/i18n";
 import { copy } from "@/content/copy";
 
