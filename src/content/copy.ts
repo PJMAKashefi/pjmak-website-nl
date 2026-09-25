@@ -226,8 +226,8 @@ export const copy = {
         name: "Diamond",
         subtitle: { en: "Smart command room & predictive intelligence", nl: "Smart command room & voorspellende intelligentie" },
         body: {
-          en: "Full-stack deployment with localised predictive analytics and an offline decision-support architecture.",
-          nl: "Volledige uitrol met lokale voorspellende analyse en een offline besluitvormingsarchitectuur.",
+          en: "The complete service with predictive analysis and decision support that runs entirely offline.",
+          nl: "De volledige dienst met voorspellende analyse en besluitvormingsondersteuning die volledig offline draait.",
         },
         points: {
           en: ["Task-specific language models, 100% offline", "Predictive budget & timeline drift analysis", "Natural-language querying of complex datasets", "24/7 dedicated engineering support"],
