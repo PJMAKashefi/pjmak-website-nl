@@ -7,7 +7,7 @@ import { copy } from "@/content/copy";
 
 const links = [
   { to: "/approach", key: "approach" },
-  { to: "/platform", key: "platform" },
+  { to: "/services", key: "services" },
   { to: "/tiers", key: "tiers" },
   { to: "/about", key: "about" },
   { to: "/contact", key: "contact" },

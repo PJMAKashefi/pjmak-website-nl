@@ -18,7 +18,7 @@ export function Footer() {
           <h3 className="eyebrow">{pick(lang, copy.footer.company)}</h3>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             <li><Link to="/approach" className="hover:text-foreground">{pick(lang, copy.nav.approach)}</Link></li>
-            <li><Link to="/platform" className="hover:text-foreground">{pick(lang, copy.nav.platform)}</Link></li>
+            <li><Link to="/services" className="hover:text-foreground">{pick(lang, copy.nav.services)}</Link></li>
             <li><Link to="/tiers" className="hover:text-foreground">{pick(lang, copy.nav.tiers)}</Link></li>
             <li><Link to="/about" className="hover:text-foreground">{pick(lang, copy.nav.about)}</Link></li>
             <li><Link to="/demo" className="hover:text-foreground">{pick(lang, copy.nav.demo)}</Link></li>

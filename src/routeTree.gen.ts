@@ -13,7 +13,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ApproachRouteImport } from './routes/approach'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as PlatformRouteImport } from './routes/platform'
 import { Route as TiersRouteImport } from './routes/tiers'
 import { Route as DemoIndexRouteImport } from './routes/demo.index'
 import { Route as DemoSectorRouteImport } from './routes/demo.$sector'
@@ -38,11 +37,6 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PlatformRoute = PlatformRouteImport.update({
-  id: '/platform',
-  path: '/platform',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const TiersRoute = TiersRouteImport.update({
   id: '/tiers',
   path: '/tiers',
@@ -64,7 +58,6 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
-  '/platform': typeof PlatformRoute
   '/tiers': typeof TiersRoute
   '/demo/$sector': typeof DemoSectorRoute
   '/demo/': typeof DemoIndexRoute
@@ -74,7 +67,6 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
-  '/platform': typeof PlatformRoute
   '/tiers': typeof TiersRoute
   '/demo/$sector': typeof DemoSectorRoute
   '/demo': typeof DemoIndexRoute
@@ -85,7 +77,6 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
-  '/platform': typeof PlatformRoute
   '/tiers': typeof TiersRoute
   '/demo/$sector': typeof DemoSectorRoute
   '/demo/': typeof DemoIndexRoute
@@ -97,7 +88,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/approach'
     | '/contact'
-    | '/platform'
     | '/tiers'
     | '/demo/$sector'
     | '/demo/'
@@ -107,7 +97,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/approach'
     | '/contact'
-    | '/platform'
     | '/tiers'
     | '/demo/$sector'
     | '/demo'
@@ -117,7 +106,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/approach'
     | '/contact'
-    | '/platform'
     | '/tiers'
     | '/demo/$sector'
     | '/demo/'
@@ -128,7 +116,6 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ApproachRoute: typeof ApproachRoute
   ContactRoute: typeof ContactRoute
-  PlatformRoute: typeof PlatformRoute
   TiersRoute: typeof TiersRoute
   DemoSectorRoute: typeof DemoSectorRoute
   DemoIndexRoute: typeof DemoIndexRoute
@@ -164,13 +151,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/platform': {
-      id: '/platform'
-      path: '/platform'
-      fullPath: '/platform'
-      preLoaderRoute: typeof PlatformRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/tiers': {
       id: '/tiers'
       path: '/tiers'
@@ -200,7 +180,6 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ApproachRoute: ApproachRoute,
   ContactRoute: ContactRoute,
-  PlatformRoute: PlatformRoute,
   TiersRoute: TiersRoute,
   DemoSectorRoute: DemoSectorRoute,
   DemoIndexRoute: DemoIndexRoute,
