@@ -240,7 +240,7 @@ export const copy = {
     eyebrow: { en: "Deployment & compliance", nl: "Uitrol & compliance" },
     title: { en: "On-premise by design.", nl: "On-premise by design." },
     items: [
-      { title: { en: "On-premise native", nl: "On-premise native" }, body: { en: "Database engines, web servers and processing layers installed inside your own infrastructure.", nl: "Database-engines, webservers en verwerkingslagen geïnstalleerd binnen uw eigen infrastructuur." } },
+      { title: { en: "On-premise native", nl: "On-premise native" }, body: { en: "Everything runs inside your own infrastructure — nothing depends on an outside service being available.", nl: "Alles draait binnen uw eigen infrastructuur — niets is afhankelijk van een externe dienst." } },
       { title: { en: "Zero public cloud routing", nl: "Geen publieke cloudroutering" }, body: { en: "No enterprise data, financial record or operational metadata ever leaves your network.", nl: "Geen bedrijfsdata, financiële registratie of operationele metadata verlaat ooit uw netwerk." } },
       { title: { en: "SSO & cell-level RBAC", nl: "SSO & RBAC tot celniveau" }, body: { en: "Active Directory / LDAP integration with automated masking of sensitive figures per clearance level.", nl: "Active Directory / LDAP-integratie met automatische maskering van gevoelige cijfers per autorisatieniveau." } },
       { title: { en: "AACE, PMI & ISO aligned", nl: "AACE-, PMI- & ISO-conform" }, body: { en: "Cost-variance and forecasting algorithms follow AACE International and PMI global standards.", nl: "Algoritmen voor kostenafwijking en prognose volgen AACE International- en PMI-standaarden." } },
