@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ApproachRouteImport } from './routes/approach'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TiersRouteImport } from './routes/tiers'
 import { Route as DemoIndexRouteImport } from './routes/demo.index'
 import { Route as DemoSectorRouteImport } from './routes/demo.$sector'
@@ -37,6 +38,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TiersRoute = TiersRouteImport.update({
   id: '/tiers',
   path: '/tiers',
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
+  '/services': typeof ServicesRoute
   '/tiers': typeof TiersRoute
   '/demo/$sector': typeof DemoSectorRoute
   '/demo/': typeof DemoIndexRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
+  '/services': typeof ServicesRoute
   '/tiers': typeof TiersRoute
   '/demo/$sector': typeof DemoSectorRoute
   '/demo': typeof DemoIndexRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
+  '/services': typeof ServicesRoute
   '/tiers': typeof TiersRoute
   '/demo/$sector': typeof DemoSectorRoute
   '/demo/': typeof DemoIndexRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/approach'
     | '/contact'
+    | '/services'
     | '/tiers'
     | '/demo/$sector'
     | '/demo/'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/approach'
     | '/contact'
+    | '/services'
     | '/tiers'
     | '/demo/$sector'
     | '/demo'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/approach'
     | '/contact'
+    | '/services'
     | '/tiers'
     | '/demo/$sector'
     | '/demo/'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ApproachRoute: typeof ApproachRoute
   ContactRoute: typeof ContactRoute
+  ServicesRoute: typeof ServicesRoute
   TiersRoute: typeof TiersRoute
   DemoSectorRoute: typeof DemoSectorRoute
   DemoIndexRoute: typeof DemoIndexRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tiers': {
       id: '/tiers'
       path: '/tiers'
@@ -180,6 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ApproachRoute: ApproachRoute,
   ContactRoute: ContactRoute,
+  ServicesRoute: ServicesRoute,
   TiersRoute: TiersRoute,
   DemoSectorRoute: DemoSectorRoute,
   DemoIndexRoute: DemoIndexRoute,
