@@ -1,7 +1,7 @@
 export const copy = {
   nav: {
     approach: { en: "Strategy & projects", nl: "Strategie & projecten" },
-    platform: { en: "Platform", nl: "Platform" },
+    services: { en: "Services", nl: "Diensten" },
     tiers: { en: "Service tiers", nl: "Serviceniveaus" },
     about: { en: "About", nl: "Over ons" },
     contact: { en: "Contact", nl: "Contact" },
@@ -20,7 +20,7 @@ export const copy = {
     ctaPrimary: { en: "See the command center", nl: "Bekijk het commandocentrum" },
     ctaSecondary: { en: "How we work", nl: "Hoe wij werken" },
     stats: [
-      { value: "4", label: { en: "Architecture layers", nl: "Architectuurlagen" } },
+      { value: "6", label: { en: "Sectors served", nl: "Sectoren bediend" } },
       { value: "0", label: { en: "Bytes to public cloud", nl: "Bytes naar publieke cloud" } },
       { value: "3", label: { en: "Deployment tiers", nl: "Uitrolniveaus" } },
     ],
@@ -104,75 +104,55 @@ export const copy = {
       },
     ],
   },
-  layers: {
-    eyebrow: { en: "Platform architecture", nl: "Platformarchitectuur" },
-    title: { en: "Four layers, deployed in phases.", nl: "Vier lagen, gefaseerd uitgerold." },
+  services: {
+    eyebrow: { en: "What we do", nl: "Wat wij doen" },
+    title: { en: "Project and programme management, end to end.", nl: "Project- en programmamanagement, van begin tot eind." },
     lead: {
-      en: "A modular architecture matched to your current digital maturity. Each layer is useful on its own and upgrades without a database rewrite or downtime.",
-      nl: "Een modulaire architectuur afgestemd op uw digitale volwassenheid. Elke laag is zelfstandig bruikbaar en kan worden uitgebreid zonder databaseherbouw of downtime.",
+      en: "We work alongside your teams on the disciplines that decide whether a portfolio delivers: planning, cost, risk, governance and reporting — supported by a command center that keeps every figure in one place.",
+      nl: "Wij werken samen met uw teams aan de disciplines die bepalen of een portfolio slaagt: planning, kosten, risico, governance en rapportage — ondersteund door een commandocentrum dat elk cijfer op één plek houdt.",
     },
     items: [
       {
-        n: "Layer 4",
-        title: { en: "Management intelligence & decision support", nl: "Managementintelligentie & besluitvorming" },
-        codes: "AI-01 · AI-02 · AI-03",
+        title: { en: "Project controls", nl: "Projectbeheersing" },
         body: {
-          en: "Crisis analyst, predictive advisor and an offline conversational assistant over your own data.",
-          nl: "Crisisanalist, voorspellend adviseur en een offline conversationele assistent op uw eigen data.",
+          en: "Planning, scheduling, progress measurement and earned value, run to AACE and PMI practice so that a percentage complete means the same thing everywhere.",
+          nl: "Planning, scheduling, voortgangsmeting en earned value, volgens AACE- en PMI-praktijk, zodat een voortgangspercentage overal hetzelfde betekent.",
         },
       },
       {
-        n: "Layer 3",
-        title: { en: "Monitoring, control & accountability", nl: "Monitoring, beheersing & verantwoording" },
-        codes: "AUD-01 · REP-01 · NOT-01",
+        title: { en: "Cost management & forecasting", nl: "Kostenmanagement & prognose" },
         body: {
-          en: "Immutable audit trail, automated board-ready report builder and a threshold-driven escalation engine.",
-          nl: "Onveranderlijk audittrail, geautomatiseerde bestuursrapportages en een drempelgestuurde escalatie-engine.",
+          en: "Budgets, commitments, actuals and forecast at completion in one structure, with variance explained before it reaches the board pack.",
+          nl: "Budgetten, verplichtingen, werkelijke kosten en eindprognose in één structuur, met afwijkingen verklaard vóór de bestuursrapportage.",
         },
       },
       {
-        n: "Layer 2",
-        title: { en: "Corporate governance & PMO controls", nl: "Governance & PMO-beheersing" },
-        codes: "GOV-01 · FIN-01 · CON-01 · RISK-01",
+        title: { en: "Risk & opportunity management", nl: "Risico- & kansenmanagement" },
         body: {
-          en: "Governance portal, Earned Value Management (SPI, CPI, BAC, EAC), contract lifecycle repository and risk matrix.",
-          nl: "Governanceportaal, Earned Value Management (SPI, CPI, BAC, EAC), contractbeheer en risicomatrix.",
+          en: "A live risk register tied to the schedule and the budget, so exposure is expressed in weeks and euros rather than colours.",
+          nl: "Een actueel risicoregister gekoppeld aan planning en budget, zodat blootstelling in weken en euro's wordt uitgedrukt in plaats van kleuren.",
         },
       },
       {
-        n: "Layer 1",
-        title: { en: "Integration & data quality assurance", nl: "Integratie & datakwaliteitsborging" },
-        codes: "INT-01 · INT-02",
+        title: { en: "PMO set-up & governance", nl: "PMO-inrichting & governance" },
         body: {
-          en: "Secure pipelines to P6, MSP, Jira, ERP and EDMS, with continuous validation for completeness and recency.",
-          nl: "Veilige pipelines naar P6, MSP, Jira, ERP en EDMS, met continue validatie op volledigheid en actualiteit.",
+          en: "We design the operating model: stage gates, decision rights, reporting cadence and the standards that make projects comparable.",
+          nl: "Wij ontwerpen het besturingsmodel: fasepoorten, beslissingsbevoegdheden, rapportageritme en de standaarden die projecten vergelijkbaar maken.",
         },
       },
-    ],
-  },
-  zones: {
-    eyebrow: { en: "Data flow", nl: "Datastroom" },
-    title: { en: "Four zones, all inside your network.", nl: "Vier zones, allemaal binnen uw netwerk." },
-    items: [
       {
-        n: "Zone 1",
-        title: { en: "Ingestion source", nl: "Invoerbron" },
-        body: { en: "Your existing P6, ERP, Jira and EDMS systems keep working exactly as they do today.", nl: "Uw bestaande P6-, ERP-, Jira- en EDMS-systemen blijven werken zoals nu." },
+        title: { en: "Portfolio & change management", nl: "Portfolio- & verandermanagement" },
+        body: {
+          en: "Prioritising the work that carries the strategy, retiring what does not, and bringing the organisation with it so the change actually lands.",
+          nl: "Prioriteren wat de strategie draagt, stoppen wat dat niet doet, en de organisatie meenemen zodat de verandering echt beklijft.",
+        },
       },
       {
-        n: "Zone 2",
-        title: { en: "Processing gateway", nl: "Verwerkingsgateway" },
-        body: { en: "Secure APIs ingest raw fields; the quality monitor cleanses and standardises the formats.", nl: "Veilige API's nemen ruwe velden op; de kwaliteitsmonitor reinigt en standaardiseert de formaten." },
-      },
-      {
-        n: "Zone 3",
-        title: { en: "Governance engine", nl: "Governance-engine" },
-        body: { en: "EVM calculations and compliance rules run locally; every transaction is logged immutably.", nl: "EVM-berekeningen en complianceregels draaien lokaal; elke transactie wordt onveranderlijk gelogd." },
-      },
-      {
-        n: "Zone 4",
-        title: { en: "Executive presentation", nl: "Directiepresentatie" },
-        body: { en: "The command dashboard and a locally indexed assistant answer questions behind the firewall.", nl: "Het commandodashboard en een lokaal geïndexeerde assistent beantwoorden vragen achter de firewall." },
+        title: { en: "Data & reporting", nl: "Data & rapportage" },
+        body: {
+          en: "One trusted set of numbers drawn from the systems you already use, presented as the command center your executives open every morning.",
+          nl: "Eén betrouwbare set cijfers uit de systemen die u al gebruikt, gepresenteerd als het commandocentrum dat uw directie elke ochtend opent.",
+        },
       },
     ],
   },
@@ -246,8 +226,8 @@ export const copy = {
         name: "Diamond",
         subtitle: { en: "Smart command room & predictive intelligence", nl: "Smart command room & voorspellende intelligentie" },
         body: {
-          en: "Full-stack deployment with localised predictive analytics and an offline decision-support architecture.",
-          nl: "Volledige uitrol met lokale voorspellende analyse en een offline besluitvormingsarchitectuur.",
+          en: "The complete service with predictive analysis and decision support that runs entirely offline.",
+          nl: "De volledige dienst met voorspellende analyse en besluitvormingsondersteuning die volledig offline draait.",
         },
         points: {
           en: ["Task-specific language models, 100% offline", "Predictive budget & timeline drift analysis", "Natural-language querying of complex datasets", "24/7 dedicated engineering support"],
@@ -260,7 +240,7 @@ export const copy = {
     eyebrow: { en: "Deployment & compliance", nl: "Uitrol & compliance" },
     title: { en: "On-premise by design.", nl: "On-premise by design." },
     items: [
-      { title: { en: "On-premise native", nl: "On-premise native" }, body: { en: "Database engines, web servers and processing layers installed inside your own infrastructure.", nl: "Database-engines, webservers en verwerkingslagen geïnstalleerd binnen uw eigen infrastructuur." } },
+      { title: { en: "On-premise native", nl: "On-premise native" }, body: { en: "Everything runs inside your own infrastructure — nothing depends on an outside service being available.", nl: "Alles draait binnen uw eigen infrastructuur — niets is afhankelijk van een externe dienst." } },
       { title: { en: "Zero public cloud routing", nl: "Geen publieke cloudroutering" }, body: { en: "No enterprise data, financial record or operational metadata ever leaves your network.", nl: "Geen bedrijfsdata, financiële registratie of operationele metadata verlaat ooit uw netwerk." } },
       { title: { en: "SSO & cell-level RBAC", nl: "SSO & RBAC tot celniveau" }, body: { en: "Active Directory / LDAP integration with automated masking of sensitive figures per clearance level.", nl: "Active Directory / LDAP-integratie met automatische maskering van gevoelige cijfers per autorisatieniveau." } },
       { title: { en: "AACE, PMI & ISO aligned", nl: "AACE-, PMI- & ISO-conform" }, body: { en: "Cost-variance and forecasting algorithms follow AACE International and PMI global standards.", nl: "Algoritmen voor kostenafwijking en prognose volgen AACE International- en PMI-standaarden." } },

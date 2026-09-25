@@ -102,26 +102,22 @@ function Home() {
         </Section>
       </div>
 
-      {/* Layers preview */}
+      {/* Services preview */}
       <Section
-        eyebrow={pick(lang, copy.layers.eyebrow)}
-        title={pick(lang, copy.layers.title)}
-        lead={pick(lang, copy.layers.lead)}
+        eyebrow={pick(lang, copy.services.eyebrow)}
+        title={pick(lang, copy.services.title)}
+        lead={pick(lang, copy.services.lead)}
       >
-        <div className="mt-12 space-y-px overflow-hidden border border-border bg-border">
-          {copy.layers.items.map((l) => (
-            <div key={l.n} className="grid gap-4 bg-card p-6 md:grid-cols-[140px_1fr_260px] md:items-baseline">
-              <span className="font-mono text-xs uppercase tracking-widest text-primary">{l.n}</span>
-              <div>
-                <h3 className="text-lg font-semibold">{pick(lang, l.title)}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{pick(lang, l.body)}</p>
-              </div>
-              <span className="font-mono text-xs text-muted-foreground">{l.codes}</span>
+        <div className="mt-12 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2">
+          {copy.services.items.map((s) => (
+            <div key={s.title.en} className="bg-card p-6">
+              <h3 className="text-lg font-semibold">{pick(lang, s.title)}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{pick(lang, s.body)}</p>
             </div>
           ))}
         </div>
-        <Link to="/platform" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-          {pick(lang, copy.nav.platform)} <ArrowRight className="h-4 w-4" />
+        <Link to="/services" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+          {pick(lang, copy.nav.services)} <ArrowRight className="h-4 w-4" />
         </Link>
       </Section>
 

@@ -57,13 +57,12 @@ function Approach() {
         </Section>
       </div>
 
-      <Section eyebrow={pick(lang, copy.zones.eyebrow)} title={pick(lang, copy.zones.title)}>
-        <div className="mt-12 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-4">
-          {copy.zones.items.map((z) => (
-            <div key={z.n} className="bg-card p-6">
-              <span className="font-mono text-xs text-primary">{z.n}</span>
-              <h3 className="mt-3 font-semibold">{pick(lang, z.title)}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{pick(lang, z.body)}</p>
+      <Section eyebrow={pick(lang, copy.usp.eyebrow)} title={pick(lang, copy.usp.title)}>
+        <div className="mt-12 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2">
+          {copy.usp.items.map((u) => (
+            <div key={u.title.en} className="bg-card p-7">
+              <h3 className="text-lg font-semibold">{pick(lang, u.title)}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{pick(lang, u.body)}</p>
             </div>
           ))}
         </div>

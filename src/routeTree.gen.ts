@@ -13,7 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ApproachRouteImport } from './routes/approach'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as PlatformRouteImport } from './routes/platform'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TiersRouteImport } from './routes/tiers'
 import { Route as DemoIndexRouteImport } from './routes/demo.index'
 import { Route as DemoSectorRouteImport } from './routes/demo.$sector'
@@ -38,9 +38,9 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PlatformRoute = PlatformRouteImport.update({
-  id: '/platform',
-  path: '/platform',
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TiersRoute = TiersRouteImport.update({
@@ -64,7 +64,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
-  '/platform': typeof PlatformRoute
+  '/services': typeof ServicesRoute
   '/tiers': typeof TiersRoute
   '/demo/$sector': typeof DemoSectorRoute
   '/demo/': typeof DemoIndexRoute
@@ -74,7 +74,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
-  '/platform': typeof PlatformRoute
+  '/services': typeof ServicesRoute
   '/tiers': typeof TiersRoute
   '/demo/$sector': typeof DemoSectorRoute
   '/demo': typeof DemoIndexRoute
@@ -85,7 +85,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
-  '/platform': typeof PlatformRoute
+  '/services': typeof ServicesRoute
   '/tiers': typeof TiersRoute
   '/demo/$sector': typeof DemoSectorRoute
   '/demo/': typeof DemoIndexRoute
@@ -97,7 +97,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/approach'
     | '/contact'
-    | '/platform'
+    | '/services'
     | '/tiers'
     | '/demo/$sector'
     | '/demo/'
@@ -107,7 +107,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/approach'
     | '/contact'
-    | '/platform'
+    | '/services'
     | '/tiers'
     | '/demo/$sector'
     | '/demo'
@@ -117,7 +117,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/approach'
     | '/contact'
-    | '/platform'
+    | '/services'
     | '/tiers'
     | '/demo/$sector'
     | '/demo/'
@@ -128,7 +128,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ApproachRoute: typeof ApproachRoute
   ContactRoute: typeof ContactRoute
-  PlatformRoute: typeof PlatformRoute
+  ServicesRoute: typeof ServicesRoute
   TiersRoute: typeof TiersRoute
   DemoSectorRoute: typeof DemoSectorRoute
   DemoIndexRoute: typeof DemoIndexRoute
@@ -164,11 +164,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/platform': {
-      id: '/platform'
-      path: '/platform'
-      fullPath: '/platform'
-      preLoaderRoute: typeof PlatformRouteImport
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tiers': {
@@ -200,7 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ApproachRoute: ApproachRoute,
   ContactRoute: ContactRoute,
-  PlatformRoute: PlatformRoute,
+  ServicesRoute: ServicesRoute,
   TiersRoute: TiersRoute,
   DemoSectorRoute: DemoSectorRoute,
   DemoIndexRoute: DemoIndexRoute,
@@ -208,3 +208,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
