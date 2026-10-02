@@ -34,13 +34,22 @@ jobs:
       - name: Build
         run: bun run build
 
+      - name: Inspect build output
+        run: |
+          echo "=== ROOT ==="
+          ls -la
+          echo "=== DIST ==="
+          if [ -d "dist" ]; then find dist -maxdepth 3 -type f | head -100; else echo "dist does not exist"; fi
+          echo "=== OUTPUT ==="
+          if [ -d ".output" ]; then find .output -maxdepth 4 -type f | head -100; else echo ".output does not exist"; fi
+
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Upload build
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./.output/public
 
   deploy:
     needs: build
